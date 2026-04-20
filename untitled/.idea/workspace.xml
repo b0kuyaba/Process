@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd3518a2-d538-4c7e-b7c5-612515fa5d1c" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B0kuyaba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B0kuyaba/img/loginSNS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B0kuyaba/img/loginlog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../animation/css/ani_css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../animation/html/ani_html.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/css/shopify_clone.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/html/fre_shopify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/html/login_shopify.clone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/html/shopify_clone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../B0kuyaba/css/Library.css" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/css/Library.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../B0kuyaba/html/B0kuyaba.html" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/html/B0kuyaba.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../B0kuyaba/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/html/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../B0kuyaba/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/html/login.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;b0kuyaba&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/b0kuyaba/my_repo.git&quot;,
+    &quot;accountId&quot;: &quot;bb96a5c3-07bc-407f-bfec-964f7d01907a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3C1tJAn45thnNuZ0wkkOgcUgVA5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;disable.download.node.interpreter.editor.notification&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dgsw26/WebstormProjects/B0kuyaba/css&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../B0kuyaba/css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../B0kuyaba/img" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.32098.39" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="cd3518a2-d538-4c7e-b7c5-612515fa5d1c" name="변경" comment="" />
+      <created>1775564829625</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775564829625</updated>
+      <workItem from="1775564831329" duration="64000" />
+      <workItem from="1775564897063" duration="6778000" />
+      <workItem from="1775605849055" duration="34000" />
+      <workItem from="1775605901947" duration="18861000" />
+      <workItem from="1775631755295" duration="9162000" />
+      <workItem from="1775646118040" duration="21000" />
+      <workItem from="1775646194305" duration="20000" />
+      <workItem from="1775646227492" duration="74000" />
+      <workItem from="1775646324993" duration="17000" />
+      <workItem from="1775646377467" duration="4826000" />
+      <workItem from="1775651872642" duration="2397000" />
+      <workItem from="1775686293191" duration="73000" />
+      <workItem from="1775686401925" duration="2364000" />
+      <workItem from="1775706271593" duration="6000" />
+      <workItem from="1775706318520" duration="12000" />
+      <workItem from="1775706428937" duration="16000" />
+      <workItem from="1775706563424" duration="177000" />
+      <workItem from="1775715669758" duration="8862000" />
+      <workItem from="1776038269052" duration="2340000" />
+      <workItem from="1776041852652" duration="2618000" />
+      <workItem from="1776051302798" duration="29000" />
+      <workItem from="1776051369920" duration="1260000" />
+      <workItem from="1776080677428" duration="1502000" />
+      <workItem from="1776083781577" duration="18000" />
+      <workItem from="1776122332131" duration="12000" />
+      <workItem from="1776151912654" duration="24000" />
+      <workItem from="1776152461595" duration="32000" />
+      <workItem from="1776175275434" duration="410000" />
+      <workItem from="1776220646543" duration="66000" />
+      <workItem from="1776220714679" duration="21000" />
+      <workItem from="1776237189302" duration="12000" />
+      <workItem from="1776582831088" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
