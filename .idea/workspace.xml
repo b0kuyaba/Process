@@ -1,18 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="ChangeListManager">
+    <list default="true" id="8fdd008e-9fd6-40a4-8e81-d49c3a8eaacb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/B0kuyaba/img/loginSNS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B0kuyaba/img/loginlog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B0kuyaba" beforeDir="false" afterPath="$PROJECT_DIR$/B0kuyaba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B0kuyaba/css/Library.css" beforeDir="false" afterPath="$PROJECT_DIR$/B0kuyaba/css/Library.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B0kuyaba/html/B0kuyaba.html" beforeDir="false" afterPath="$PROJECT_DIR$/B0kuyaba/html/B0kuyaba.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B0kuyaba/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/B0kuyaba/html/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B0kuyaba/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/B0kuyaba/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/chapter12.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/chapter13.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/chapter14.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/chapter15.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/chapter16.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/chapter17.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter04.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter07.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter08.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter09.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter10.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter12.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter13.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/chapter14.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/section2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/css/delete_info.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/css/sign_up.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/html/delete_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/html/sign_up.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/login_js/js/userinfor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/shopify_clone/css/shopify_clone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/shopify_clone/html/shopify_clone.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/shopify_clone/img/glyph-color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/shopify_clone/img/logo-color-dark-bg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/shopify_clone/vd/shopify-home-video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/onebite react" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3KymAglSN7V6WaVOfM3QUPtP2Ks" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.32098.39" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="8fdd008e-9fd6-40a4-8e81-d49c3a8eaacb" name="Changes" comment="" />
       <created>1777640757146</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1777640757146</updated>
       <workItem from="1777640760915" duration="617000" />
+      <workItem from="1792538040961" duration="6814000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리푸드 (ReFood) - 지구를 살리고 기아를 끝내는 맛있는 대안</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            }
+          },
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS Separation -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-emerald-100 selection:text-emerald-800">
+
+  <!-- ==================== TOP ZERO HUNGER CAMPAIGN BANNER ==================== -->
+  <div class="bg-gradient-to-r from-amber-600 via-emerald-700 to-teal-800 text-white text-xs font-bold py-2.5 px-4 text-center flex flex-wrap items-center justify-center gap-2 shadow-inner">
+    <span class="inline-flex items-center gap-1 bg-white/20 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold tracking-wide">
+      🌾 Zero Hunger 캠페인
+    </span>
+    <span>가축 사료로 사라지는 곡물을 굶주린 이웃의 밥상으로! ReFood의 모든 구매는 기아 구호 영양식으로 자동 기부됩니다.</span>
+    <button onclick="switchTab('market')" class="underline hover:text-amber-200 text-xs ml-1 font-bold">
+      기부 마켓 둘러보기 &rarr;
+    </button>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-shadow duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Logo (ReFood) -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 font-black text-sm tracking-wider">
+            RF
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-emerald-800 via-emerald-600 to-teal-600 bg-clip-text text-transparent tracking-tight">ReFood</span>
+              <span class="hidden sm:inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">Zero Hunger</span>
+            </div>
+            <p class="text-[11px] text-slate-500 font-medium leading-none hidden sm:block">지구와 기아를 구하는 맛있는 대안 식탁 (리푸드)</p>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex items-center gap-1 sm:gap-2 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80">
+          <button id="nav-btn-home" onclick="switchTab('home')" class="nav-tab-btn flex items-center gap-1.5 sm:gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all text-emerald-700 bg-white shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>홈</span>
+          </button>
+          <button id="nav-btn-recipes" onclick="switchTab('recipes')" class="nav-tab-btn flex items-center gap-1.5 sm:gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-emerald-600 hover:bg-white/60">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            <span>홈쿡 레시피</span>
+          </button>
+          <button id="nav-btn-calculator" onclick="switchTab('calculator')" class="nav-tab-btn flex items-center gap-1.5 sm:gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-emerald-600 hover:bg-white/60">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            <span>환경 & 기아 계산기</span>
+          </button>
+          <button id="nav-btn-market" onclick="switchTab('market')" class="nav-tab-btn flex items-center gap-1.5 sm:gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-emerald-600 hover:bg-white/60">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <span>기부 연동 마켓</span>
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          </button>
+        </nav>
+
+        <!-- Right Action: Cart Button -->
+        <div class="flex items-center gap-3">
+          <button onclick="toggleCartModal(true)" class="relative p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-slate-700 hover:text-emerald-600 shadow-sm flex items-center gap-2" title="장바구니 확인">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span class="hidden md:inline text-xs font-bold text-slate-700">장바구니</span>
+            <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-emerald-600 text-white text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENTS CONTAINER ==================== -->
+  <main class="flex-1">
+
+    <!-- ======================================================== -->
+    <!-- PAGE 1: 메인 홈 & 레시피 탐색 (Home & Recipe) -->
+    <!-- ======================================================== -->
+    <section id="tab-home" class="tab-content active">
+
+      <!-- Hero Section -->
+      <div class="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-teal-50/40 to-slate-50 pt-10 pb-16 sm:py-20 border-b border-emerald-100">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -left-20 w-80 h-80 bg-amber-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Left Copy & CTA -->
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-300 text-amber-900 text-xs sm:text-sm font-semibold shadow-xs">
+                <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-ping"></span>
+                <span>지구를 살리고 기아를 끝내는 한 끼의 기적 🌾</span>
+              </div>
+              <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+                "오늘 점심은 지구를 살리고 <br class="hidden sm:inline"/>
+                <span class="text-amber-800">기아를 구하는</span> 
+                <span class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent underline decoration-emerald-300 decoration-wavy decoration-2">버섯 고기 파스타</span> 어떠세요?"
+              </h1>
+              <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+                <strong class="text-slate-800 font-semibold">전 세계 곡물의 40% 이상이 가축 사료로 소모되고 있습니다.</strong><br class="hidden sm:inline"/>
+                우리가 대체 식량을 선택하면 곡물은 굶주리는 이웃의 밥상으로 돌아갑니다.<br class="hidden sm:inline"/>
+                고기보다 맛있는 대체 식량으로 탄소는 줄이고, 결식 아동에게 따뜻한 영양식을 선물하세요!
+              </p>
+              
+              <!-- Buttons -->
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <button onclick="switchTab('recipes')" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-600/30 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  <span>초간단 홈쿡 레시피 보기 &rarr;</span>
+                </button>
+                <button onclick="switchTab('calculator')" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-bold text-sm sm:text-base border border-slate-300 shadow-xs transition-all flex items-center gap-2">
+                  <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                  <span>식량 전환 & 탄소 계산기</span>
+                </button>
+              </div>
+
+              <!-- Social Proof Metrics (Zero Hunger & Eco) -->
+              <div class="pt-4 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div>
+                  <div class="text-xl sm:text-2xl font-black text-amber-600">14,850+ 끼</div>
+                  <div class="text-xs text-slate-500 font-medium">결식아동 영양식 기부</div>
+                </div>
+                <div>
+                  <div class="text-xl sm:text-2xl font-black text-slate-900">92.4 톤</div>
+                  <div class="text-xs text-slate-500 font-medium">인간 식량 전환 곡물</div>
+                </div>
+                <div>
+                  <div class="text-xl sm:text-2xl font-black text-emerald-600">-89%</div>
+                  <div class="text-xs text-slate-500 font-medium">평균 온실가스 저감</div>
+                </div>
+                <div>
+                  <div class="text-xl sm:text-2xl font-black text-slate-900">96.8%</div>
+                  <div class="text-xs text-slate-500 font-medium">블라인드 맛 만족도</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Visual Hero Card -->
+            <div class="lg:col-span-5">
+              <div class="relative bg-white rounded-3xl p-4 sm:p-5 shadow-2xl border border-emerald-100 transform hover:scale-[1.01] transition-all">
+                <div class="relative h-64 sm:h-80 rounded-2xl overflow-hidden group">
+                  <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=900&q=80" alt="버섯 고기 파스타" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                  
+                  <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-extrabold text-amber-800 flex items-center gap-1.5 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    <span>MD 강력 추천 · 기아구호 연계</span>
+                  </div>
+
+                  <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-600/90 text-white mb-1 inline-block">식물성 버섯 대체육</span>
+                    <h3 class="text-lg sm:text-xl font-bold">트러플 버섯 대체육 볼로네제 파스타</h3>
+                    <p class="text-xs text-slate-200 mt-1 line-clamp-1">고소한 표고버섯 단백질과 유기농 토마토 소스의 환상적인 조화</p>
+                  </div>
+                </div>
+
+                <div class="mt-4 p-3 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl flex items-center justify-between border border-emerald-100">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-lg shadow-xs">
+                      🥣
+                    </div>
+                    <div>
+                      <div class="text-[11px] text-slate-500 font-medium">한 그릇 섭취 시 영향</div>
+                      <div class="text-xs sm:text-sm font-bold text-slate-800">
+                        <span class="text-emerald-700 font-extrabold">소고기 250g 대체</span> · 
+                        <span class="text-amber-700 font-extrabold">450원 자동 기부 포함</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button onclick="goToMarketWithCategory('식물성 대체육')" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition shadow-xs whitespace-nowrap">
+                    재료 보기 &rarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust & Anti-Hesitation Banner (기아 종식 및 거부감 해소 3대 안심 기준) -->
+      <div class="bg-white py-12 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">Zero Hunger & Clean Food</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">"대체 식량, 왜 전 세계가 주목할까요?"</h2>
+            <p class="text-slate-500 text-sm mt-2">맛과 건강에 대한 걱정은 비우고, 기아 해결과 지구 보전의 확실한 가치를 채웠습니다.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-4 font-bold">
+                🥩
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">블라인드 테스트 96% 만족</h3>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                식품공학 기술로 미세 마이크로 조직을 구현하여, 일반 고기의 결체조직과 촉촉한 육즙 풍미를 100% 동일하게 재현했습니다.
+              </p>
+              <div class="mt-4 text-xs font-bold text-emerald-700 flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>소고기와 똑같은 씹는 맛 보장</span>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md">
+              <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl mb-4 font-bold">
+                💪
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">단백질은 2배, 소화는 편안하게</h3>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                식용 곤충(고소애)과 콩단백은 필수 아미노산 전종(BCAA)과 풍부한 식이섬유를 함유해 콜레스테롤 걱정 없이 속이 편안합니다.
+              </p>
+              <div class="mt-4 text-xs font-bold text-teal-700 flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>콜레스테롤 0mg · 고단백 설계</span>
+              </div>
+            </div>
+
+            <!-- Feature 3 (Hunger & Zero Hunger Focus) -->
+            <div class="bg-amber-50/70 rounded-2xl p-6 border border-amber-200/90 hover:border-amber-400 transition-all hover:shadow-md">
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mb-4 font-bold">
+                🌾
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">가축 사료를 사람의 밥상으로 (Zero Hunger)</h3>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                소고기 1인분을 위해 사료 곡물 7kg이 소모됩니다. 대체 식량을 선택하면 그 곡물이 전 세계 굶주리는 이웃의 식량으로 돌아가며, 구매 시 기아 구호 기금이 자동으로 적립됩니다.
+              </p>
+              <div class="mt-4 text-xs font-bold text-amber-800 flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>소고기 1kg = 기아 아동 14명의 한 끼 식사 보전</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipes Section -->
+      <!-- Home Bottom Quick Banner: 레시피 탭 바로가기 프리뷰 -->
+      <div class="py-16 bg-gradient-to-b from-slate-50 to-emerald-50/50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="bg-gradient-to-r from-emerald-800 via-teal-800 to-amber-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-3 text-center md:text-left">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                🍳 5분~15분 완성 초간단 홈쿡
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">집에서 쉽게 시작하는 대체 식량 8선</h3>
+              <p class="text-emerald-100 text-sm max-w-xl">
+                불 없이 5분 만에 완성하는 단백질 에너지볼부터 에어프라이어 찹스테이크까지!<br class="hidden sm:inline"/>
+                한 끼 요리할 때마다 절약되는 수자원과 기아 구호 기여도를 '홈쿡 레시피' 탭에서 만나보세요.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <button onclick="switchTab('recipes')" class="px-7 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-extrabold rounded-xl text-sm sm:text-base shadow-lg transition whitespace-nowrap flex items-center justify-center gap-2">
+                <span>홈쿡 레시피 전체 보기</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- PAGE: 대체 식량 홈쿡 레시피 (Homecook Recipes)             -->
+    <!-- ======================================================== -->
+    <section id="tab-recipes" class="tab-content py-12 sm:py-16 bg-slate-50 min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold mb-3 border border-emerald-200">
+            <span>🍳 Easy Homecook & Resource Saving Guide</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">집에서 쉽게 즐기는 대체 식량 레시피</h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            요리 초보자도 5분~15분 만에 불 없이, 혹은 에어프라이어나 프라이팬 하나로 완성!<br class="hidden sm:inline"/>
+            <strong class="text-emerald-700">카드를 누르면 상세 조리법과 재료 계량표</strong>가 펼쳐집니다.
+          </p>
+        </div>
+
+        <!-- Recipe Category Filter Buttons & Count -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="recipe-categories-container">
+            <button onclick="filterRecipes('전체')" class="recipe-cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-600 text-white shadow-sm whitespace-nowrap transition">
+              전체 레시피 (8)
+            </button>
+            <button onclick="filterRecipes('10분 컷')" class="recipe-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              ⏱️ 10분 컷 초간단 (5)
+            </button>
+            <button onclick="filterRecipes('식물성 대체육')" class="recipe-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              🥩 식물성 대체육 (4)
+            </button>
+            <button onclick="filterRecipes('미래 단백질(곤충류)')" class="recipe-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              🦗 미래 단백질 (2)
+            </button>
+            <button onclick="filterRecipes('친환경 해조류')" class="recipe-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              🌊 친환경 해조류 (2)
+            </button>
+          </div>
+          <div class="text-xs text-slate-500 font-medium shrink-0">
+            등록된 홈쿡 레시피: <strong id="recipes-count" class="text-emerald-700 font-bold">8개</strong>
+          </div>
+        </div>
+
+        <!-- Recipe Cards Grid (Dynamic populated via js/app.js) -->
+        <div id="recipes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Dynamically populated via js/app.js -->
+        </div>
+
+        <!-- Bottom Action Banner (Zero Hunger & Calculator Link) -->
+        <div class="mt-12 bg-gradient-to-r from-emerald-800 via-teal-800 to-amber-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <span class="text-amber-300 text-xs font-bold uppercase tracking-wider">Zero Hunger & Eco Impact</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold">레시피로 절약된 곡물이 기아 아동을 살립니다</h3>
+            <p class="text-emerald-100 text-sm max-w-xl">단 한 번의 식사 전환으로 절약되는 사료 곡물과 결식아동 영양식 끼니 수를 실시간 계산기에서 확인해 보세요.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="switchTab('calculator')" class="px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-extrabold rounded-xl text-sm transition shadow-lg flex items-center gap-2">
+              <span>식량 & 환경 계산기 실행</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <button onclick="switchTab('market')" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition border border-white/20 flex items-center gap-2">
+              <span>기부 마켓 둘러보기 &rarr;</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- ======================================================== -->
+    <!-- PAGE 2: 환경 & 기아 지속 가능성 계산기 (Eco & Hunger Calculator) -->
+    <!-- ======================================================== -->
+    <section id="tab-calculator" class="tab-content py-12 sm:py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-3 border border-amber-200">
+            <span>🌾 Zero Hunger & Climate Action Simulator</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">환경 & 기아 지속 가능성 계산기</h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            내가 이번 주에 소고기나 가공육 대신 선택한 대체 식량(g)을 입력하면,<br class="hidden sm:inline"/>
+            지구에 선물한 물과 탄소뿐만 아니라 <strong class="text-amber-800 font-bold">인간의 식량으로 전환된 사료 곡물과 기아 구호 식사 수</strong>를 실시간으로 계산해 드립니다.
+          </p>
+        </div>
+
+        <!-- Calculator Interactive Card -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-10">
+          
+          <!-- Controls Area -->
+          <div class="space-y-6">
+            
+            <!-- Step 1: Meat Type Selector -->
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">1. 대체하려는 기존 축산 육류를 선택하세요</label>
+              <div class="grid grid-cols-3 gap-3">
+                <button type="button" onclick="selectMeatType('beef')" id="meat-btn-beef" class="meat-btn p-3.5 rounded-xl border-2 border-emerald-600 bg-emerald-50/80 text-emerald-900 font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition shadow-xs">
+                  <span>🥩</span>
+                  <span>소고기 (Beef)</span>
+                </button>
+                <button type="button" onclick="selectMeatType('pork')" id="meat-btn-pork" class="meat-btn p-3.5 rounded-xl border-2 border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm sm:text-base flex items-center justify-center gap-2 transition">
+                  <span>🥓</span>
+                  <span>돼지고기 (Pork)</span>
+                </button>
+                <button type="button" onclick="selectMeatType('chicken')" id="meat-btn-chicken" class="meat-btn p-3.5 rounded-xl border-2 border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm sm:text-base flex items-center justify-center gap-2 transition">
+                  <span>🍗</span>
+                  <span>닭고기 (Chicken)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Amount Slider & Quick Buttons -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="meat-slider" class="text-sm font-bold text-slate-700">2. 이번 주 대체한 식량의 양</label>
+                <div class="flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-xl">
+                  <input type="number" id="meat-input" value="300" min="0" max="3000" step="50" oninput="syncFromInput(this.value)" class="w-16 bg-transparent text-emerald-800 font-black text-right outline-none text-base sm:text-lg">
+                  <span class="text-emerald-800 font-extrabold text-sm">g</span>
+                </div>
+              </div>
+
+              <!-- Slider Container with Accurate Ticks & Proportional Labels -->
+              <div class="relative pt-1 pb-1">
+                <!-- Slider Input -->
+                <input type="range" id="meat-slider" min="0" max="2000" step="50" value="300" oninput="syncFromSlider(this.value)" class="w-full relative z-10">
+
+                <!-- Tick Marks (0%, 25%, 50%, 75%, 100%) -->
+                <div class="flex justify-between items-center px-1 text-slate-300 pointer-events-none -mt-1 select-none">
+                  <span class="w-0.5 h-2 bg-slate-300 rounded"></span>
+                  <span class="w-0.5 h-2 bg-slate-300 rounded"></span>
+                  <span class="w-0.5 h-2 bg-slate-300 rounded"></span>
+                  <span class="w-0.5 h-2 bg-slate-300 rounded"></span>
+                  <span class="w-0.5 h-2 bg-slate-300 rounded"></span>
+                </div>
+
+                <!-- Proportional Labels (Accurately Matching 0 ~ 2,000g Track) -->
+                <div class="flex justify-between text-[11px] text-slate-500 font-medium mt-1.5 px-0.5">
+                  <button type="button" onclick="setPreset(0)" class="text-left hover:text-emerald-700 transition">0g <span class="hidden sm:inline text-[10px] text-slate-400">(시작)</span></button>
+                  <button type="button" onclick="setPreset(500)" class="text-center hover:text-emerald-700 transition">500g <span class="hidden sm:inline text-[10px] text-slate-400">(가족 식사)</span></button>
+                  <button type="button" onclick="setPreset(1000)" class="text-center hover:text-emerald-700 transition">1,000g <span class="hidden sm:inline text-[10px] text-slate-400">(1주 실천)</span></button>
+                  <button type="button" onclick="setPreset(1500)" class="text-center hover:text-emerald-700 transition">1,500g <span class="hidden sm:inline text-[10px] text-slate-400">(2주 실천)</span></button>
+                  <button type="button" onclick="setPreset(2000)" class="text-right hover:text-emerald-700 transition">2,000g <span class="hidden sm:inline text-[10px] text-slate-400">(한 달 챌린지)</span></button>
+                </div>
+              </div>
+
+              <!-- Quick Presets -->
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs text-slate-400 self-center mr-1">간편 프리셋:</span>
+                <button type="button" onclick="setPreset(150)" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-emerald-100 hover:text-emerald-800 transition">1끼 식사 (150g)</button>
+                <button type="button" onclick="setPreset(300)" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-emerald-100 hover:text-emerald-800 transition">파스타 2인분 (300g)</button>
+                <button type="button" onclick="setPreset(500)" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-emerald-100 hover:text-emerald-800 transition">가족 식사 (500g)</button>
+                <button type="button" onclick="setPreset(650)" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition">추천 코스 (650g)</button>
+                <button type="button" onclick="setPreset(1000)" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-emerald-100 hover:text-emerald-800 transition">1주일 실천 (1,000g)</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Divider -->
+          <div class="relative flex items-center justify-center">
+            <div class="border-t border-slate-200 w-full"></div>
+            <span class="bg-white px-4 text-xs font-bold text-slate-400 uppercase tracking-widest absolute">Zero Hunger & Eco Impact</span>
+          </div>
+
+          <!-- Dashboard Results (Dynamic Metrics: 4 Grid Cards matching the user's screenshot) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <!-- Metric 1: Grain (Zero Hunger Focus) -->
+            <div class="bg-gradient-to-b from-amber-50 to-orange-50/60 rounded-2xl p-5 border border-amber-200 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-extrabold text-amber-800 bg-amber-100 px-2.5 py-1 rounded-md">사료곡물 식량전환</span>
+                <span class="text-2xl">🌾</span>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-medium">인간 식량으로 돌려준 곡물</div>
+                <div class="text-2xl sm:text-3xl font-black text-amber-900 tracking-tight mt-1 flex items-baseline gap-1">
+                  <span id="res-grain">2.1</span>
+                  <span class="text-base font-bold text-amber-700">kg</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-amber-200/60 text-[11px] text-amber-800 font-medium">
+                가축 사료로 낭비되던 소중한 식량 자원을 보전했어요!
+              </div>
+            </div>
+
+            <!-- Metric 2: Meals (Zero Hunger Relief Meals) -->
+            <div class="bg-gradient-to-b from-orange-50 to-amber-50/60 rounded-2xl p-5 border border-orange-200 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-extrabold text-orange-800 bg-orange-100 px-2.5 py-1 rounded-md">기아 구호 식사 환산</span>
+                <span class="text-2xl">🥣</span>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-medium">지원 가능한 영양 식사 수</div>
+                <div class="text-2xl sm:text-3xl font-black text-orange-900 tracking-tight mt-1 flex items-baseline gap-1">
+                  <span id="res-meals">4.2</span>
+                  <span class="text-base font-bold text-orange-700">끼</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-orange-200/60 text-[11px] text-orange-800 font-medium">
+                굶주리는 결식 아동 약 <strong class="text-orange-950 font-black">4명</strong>에게 한 끼 영양을 공급할 수 있어요!
+              </div>
+            </div>
+
+            <!-- Metric 3: Water -->
+            <div class="bg-gradient-to-b from-sky-50 to-blue-50/50 rounded-2xl p-5 border border-sky-200 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-extrabold text-sky-800 bg-sky-100 px-2.5 py-1 rounded-md">수자원 보전</span>
+                <span class="text-2xl">💧</span>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-medium">아껴낸 물의 양</div>
+                <div class="text-2xl sm:text-3xl font-black text-sky-900 tracking-tight mt-1 flex items-baseline gap-1">
+                  <span id="res-water">4,170</span>
+                  <span class="text-base font-bold text-sky-700">L</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-sky-200/60 text-[11px] text-sky-800 font-medium">
+                샤워 약 <strong id="res-shower" class="text-sky-950 font-black">41회</strong>분 분량의 물을 보전했어요!
+              </div>
+            </div>
+
+            <!-- Metric 4: CO2 -->
+            <div class="bg-gradient-to-b from-emerald-50 to-teal-50/50 rounded-2xl p-5 border border-emerald-200 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-extrabold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md">탄소 배출 저감</span>
+                <span class="text-2xl">☁️</span>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-medium">줄여낸 온실가스(CO2)</div>
+                <div class="text-2xl sm:text-3xl font-black text-emerald-900 tracking-tight mt-1 flex items-baseline gap-1">
+                  <span id="res-co2">17.0</span>
+                  <span class="text-base font-bold text-emerald-700">kg</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-emerald-200/60 text-[11px] text-emerald-800 font-medium">
+                소나무 <span id="res-trees" class="font-bold">2.6</span>그루 효과 / 승용차 <strong id="res-km" class="text-emerald-950 font-black">85km</strong> 상쇄!
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Eco & Zero Hunger Badge & Dynamic Level -->
+          <div class="p-5 rounded-2xl bg-amber-50/50 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div id="badge-icon" class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-3xl shadow-md">
+                🌾
+              </div>
+              <div>
+                <div class="text-xs font-bold text-amber-800" id="badge-level">제로헝거 레벨 2: 온기 식탁 히어로</div>
+                <h4 class="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5" id="badge-title">당신의 한 끼가 강과 숲을 지키고 영양 식사 5끼 이상을 채웁니다!</h4>
+                <p class="text-xs text-slate-500">대체 식량 1달 실천 시 전 세계 식량 위기 지역에 20끼 이상의 곡물 자원을 전달하게 됩니다.</p>
+              </div>
+            </div>
+            <button onclick="copyImpactResult()" class="px-4 py-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 rounded-xl text-xs font-bold shadow-xs transition flex items-center gap-1.5 whitespace-nowrap">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              <span>결과 클립보드 복사</span>
+            </button>
+          </div>
+
+          <!-- Final Bottom CTA to Market -->
+          <div class="text-center pt-2">
+            <button onclick="switchTab('market')" class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-amber-600 hover:brightness-105 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/25 transition transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-3">
+              <span class="text-xl">🛒</span>
+              <span>지구와 기아 구하러 마켓 가기 (기부 연동 상품)</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+            <p class="text-xs text-slate-400 mt-3 font-normal">구매 시 결제 금액의 5%가 전 세계 기아 아동 및 결식 가정의 영양식으로 자동 기부됩니다.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================== -->
+    <!-- PAGE 3: 대체 식량 오픈 마켓 (ReFood Market) -->
+    <!-- ======================================================== -->
+    <section id="tab-market" class="tab-content py-10 sm:py-14 bg-slate-50 min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Market Title Bar -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-2 border border-amber-200">
+              <span>🌾 100% 기아 구호 기부 연동 대체 식량 오픈마켓</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">리푸드 마켓 (ReFood Market)</h2>
+            <p class="text-slate-500 text-sm mt-1">내가 고른 음식에 따라 <strong class="text-emerald-700">대체한 육류량</strong>과 <strong class="text-amber-700">기아 구호 기부금</strong>을 바로 확인하세요.</p>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="flex items-center gap-3 w-full md:w-auto">
+            <div class="relative flex-1 md:w-72">
+              <input type="text" id="market-search" placeholder="상품명, 식자재 검색..." oninput="filterProducts()" class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-xs">
+              <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <button onclick="resetFilters()" class="p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-semibold text-slate-600 hover:text-emerald-600 shadow-xs" title="필터 초기화">
+              초기화
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Buttons & Live Counter -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="category-buttons-container">
+            <button onclick="setCategory('전체')" class="category-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-600 text-white shadow-sm whitespace-nowrap transition">
+              전체 상품 (16)
+            </button>
+            <button onclick="setCategory('식물성 대체육')" class="category-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              🥩 식물성 대체육 (7)
+            </button>
+            <button onclick="setCategory('미래 단백질(곤충류)')" class="category-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              🦗 미래 단백질(곤충류) (4)
+            </button>
+            <button onclick="setCategory('친환경 해조류')" class="category-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 whitespace-nowrap transition">
+              🌊 친환경 해조류 (5)
+            </button>
+          </div>
+          <div class="text-xs text-slate-500 font-medium shrink-0">
+            등록된 대체 식량: <strong id="market-product-count" class="text-emerald-700 font-bold">16개</strong>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Dynamically populated via js/app.js -->
+        </div>
+
+        <!-- Empty Results Message -->
+        <div id="empty-state" class="hidden text-center py-20 bg-white rounded-3xl border border-slate-200 p-8">
+          <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-3xl mx-auto mb-4">🔍</div>
+          <h3 class="text-lg font-bold text-slate-800">검색 조건에 맞는 상품이 없습니다.</h3>
+          <p class="text-xs text-slate-500 mt-1">다른 검색어를 입력하시거나 카테고리 필터를 초기화해 보세요.</p>
+          <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm">전체 상품 보기</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t border-slate-200 py-10 mt-16 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm tracking-wide">
+            RF
+          </div>
+          <div>
+            <div class="font-extrabold text-slate-800 text-sm">리푸드 (ReFood) 포털 프로토타입</div>
+            <div>대체 식량 활성화, 식량 안보 및 기아 종식(Zero Hunger) 연계 프로젝트</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 text-slate-600 font-medium">
+          <a href="javascript:void(0)" onclick="switchTab('home')" class="hover:text-emerald-600 transition">홈 & 레시피</a>
+          <a href="javascript:void(0)" onclick="switchTab('calculator')" class="hover:text-emerald-600 transition">환경 & 기아 계산기</a>
+          <a href="javascript:void(0)" onclick="switchTab('market')" class="hover:text-emerald-600 transition">기부 연동 마켓</a>
+          <a href="javascript:void(0)" onclick="alert('리푸드(ReFood)는 UN-SDGs(지속가능개발목표) 2번 목표인 기아 종식(Zero Hunger)과 13번 기후행동을 지향하는 가상 프로토타입입니다.')" class="hover:text-emerald-600 transition">이용약관</a>
+        </div>
+
+      </div>
+
+      <div class="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
+        <p>&copy; 2026 ReFood Inc. All rights reserved. 분리된 CSS와 JS 구조로 제작된 프로토타입입니다.</p>
+        <p>환경 & 기아 데이터 기준: FAO(유엔식량농업기구), WFP(세계식량계획) & Water Footprint Network 통계 기반 산출</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== CART MODAL (장바구니 & 구매 직전 임팩트 확인) ==================== -->
+  <div id="cart-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl w-full max-w-xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-scale-up">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-emerald-50/60">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <h3 class="font-extrabold text-slate-900 text-lg">나의 에코 & 기아 구호 장바구니</h3>
+        </div>
+        <button onclick="toggleCartModal(false)" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body: Cart Items -->
+      <div id="cart-items-container" class="p-5 flex-1 overflow-y-auto divide-y divide-slate-100 space-y-3">
+        <!-- Rendered via js/app.js -->
+      </div>
+
+      <!-- Modal Footer (요청사항: 구매하기 직전에 대체한 육류량과 아낀 자원 수치를 모두 확인하는 대시보드) -->
+      <div class="p-5 border-t border-slate-200 bg-slate-50 space-y-3.5">
+        
+        <!-- [구매 직전 확인 대시보드] 스크린샷 지표(육류 대체량, 물, 사료곡물, 탄소, 기아구호 식사) 100% 반영 -->
+        <div id="cart-impact-report" class="rounded-2xl p-4 bg-white border border-slate-200/90 shadow-sm space-y-3 transition-opacity duration-200">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div class="flex items-center gap-1.5 text-xs font-black text-slate-800">
+              <span class="text-sm">📊</span>
+              <span>구매 직전 임팩트 확인 (내가 아낀 자원 & 기아 구호)</span>
+            </div>
+            <span class="text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              실시간 자동 산출
+            </span>
+          </div>
+
+          <!-- 4개 핵심 지표 카드 (계산기 대시보드와 동일한 4-Grid 카드 구성) -->
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            
+            <!-- 1. 대체한 육류의 양 (몇 g 대체했는지) -->
+            <div class="p-2.5 bg-red-50/80 rounded-xl border border-red-200/70 flex flex-col justify-between">
+              <div class="text-[11px] text-red-800 font-bold flex items-center justify-between">
+                <span>🥩 대체한 육류</span>
+                <span id="cart-total-meat-sub" class="text-[10px] text-red-600 font-medium">소고기 약 0인분</span>
+              </div>
+              <div class="mt-1">
+                <span id="cart-total-meat" class="text-lg font-black text-red-950 tracking-tight">0 g</span>
+              </div>
+            </div>
+
+            <!-- 2. 수자원 보전 (아껴낸 물의 양) -->
+            <div class="p-2.5 bg-sky-50/80 rounded-xl border border-sky-200/70 flex flex-col justify-between">
+              <div class="text-[11px] text-sky-800 font-bold flex items-center justify-between">
+                <span>💧 수자원 보전</span>
+                <span id="cart-total-shower" class="text-[10px] text-sky-600 font-medium">샤워 약 0회분</span>
+              </div>
+              <div class="mt-1">
+                <span id="cart-total-water" class="text-lg font-black text-sky-950 tracking-tight">0 L</span>
+              </div>
+            </div>
+
+            <!-- 3. 사료곡물 식량전환 (인간 식량으로 돌려준 곡물) -->
+            <div class="p-2.5 bg-amber-50/80 rounded-xl border border-amber-200/70 flex flex-col justify-between">
+              <div class="text-[11px] text-amber-800 font-bold flex items-center justify-between">
+                <span>🌾 사료곡물 식량전환</span>
+                <span class="text-[10px] text-amber-600 font-medium">인간 식량 보전</span>
+              </div>
+              <div class="mt-1">
+                <span id="cart-total-grain" class="text-lg font-black text-amber-950 tracking-tight">0.0 kg</span>
+              </div>
+            </div>
+
+            <!-- 4. 탄소 배출 저감 (줄여낸 온실가스) -->
+            <div class="p-2.5 bg-emerald-50/80 rounded-xl border border-emerald-200/70 flex flex-col justify-between">
+              <div class="text-[11px] text-emerald-800 font-bold flex items-center justify-between">
+                <span>☁️ 탄소 배출 저감</span>
+                <span id="cart-total-km" class="text-[10px] text-emerald-600 font-medium">차량 0km 상쇄</span>
+              </div>
+              <div class="mt-1">
+                <span id="cart-total-co2" class="text-lg font-black text-emerald-950 tracking-tight">0.0 kg</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 5. 기아 구호 식사 및 포함 기부금 행 (추가비용 없이 구매가에 포함됨을 명시) -->
+          <div class="p-3 rounded-xl bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 border border-amber-200/90 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🥣</span>
+              <div>
+                <div class="text-xs font-black text-amber-950 flex items-center gap-1.5">
+                  <span>기아 구호 영양식 자동 지원</span>
+                  <span class="text-[10px] bg-emerald-100 text-emerald-800 font-extrabold px-1.5 py-0.2 rounded-full border border-emerald-200">추가비용 0원</span>
+                </div>
+                <div class="text-[10px] text-amber-800 font-medium mt-0.5">
+                  <span id="cart-total-meals" class="font-extrabold text-amber-900">결식아동 0.0끼 지원</span> · 
+                  <span id="cart-total-donation" class="text-slate-600">0원 기부금 포함</span>
+                </div>
+              </div>
+            </div>
+            <span class="text-[11px] font-black text-emerald-700 bg-white/90 px-2 py-1 rounded-lg border border-emerald-200 shadow-2xs">
+              구매가에 포함
+            </span>
+          </div>
+
+        </div>
+
+        <!-- 6. 총 결제 금액 -->
+        <div class="flex items-center justify-between text-sm px-1">
+          <div>
+            <span class="text-slate-800 font-bold text-base">총 결제 금액</span>
+            <span class="text-[11px] text-emerald-700 font-medium ml-1.5">(기부금 포함가)</span>
+          </div>
+          <span id="cart-total-price" class="text-2xl font-black text-slate-900">0원</span>
+        </div>
+
+        <!-- 7. 결제 액션 버튼 -->
+        <div class="flex items-center gap-2 pt-1">
+          <button onclick="clearCart()" class="py-3 px-4 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl text-sm transition">
+            비우기
+          </button>
+          <button onclick="checkoutCart()" class="flex-1 py-3.5 px-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-amber-600 hover:brightness-105 text-white font-extrabold rounded-xl text-sm transition shadow-md shadow-emerald-600/20 flex items-center justify-center gap-1.5">
+            <span>주문 결제하기 (추가 비용 없이 자동 기부)</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  
+  <!-- ==================== RECIPE DETAIL MODAL (레시피 상세 조회 모달) ==================== -->
+  <div id="recipe-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-scale-up">
+      
+      <!-- Modal Header (Close button & Badge) -->
+      <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-900 shrink-0">
+        <img id="modal-recipe-img" src="" alt="" class="w-full h-full object-cover opacity-85">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20"></div>
+        
+        <!-- Close Button -->
+        <button onclick="toggleRecipeModal(false)" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 text-white hover:bg-black/70 flex items-center justify-center transition border border-white/20 shadow-md z-10" title="닫기">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+
+        <!-- Top Badges -->
+        <div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+          <span id="modal-recipe-cat" class="px-2.5 py-1 rounded-full text-xs font-bold text-white shadow-sm"></span>
+          <span id="modal-recipe-time" class="px-2.5 py-1 rounded-full text-xs font-bold bg-white/90 text-slate-800 shadow-sm flex items-center gap-1"></span>
+        </div>
+
+        <!-- Recipe Title & Sub -->
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <div class="flex items-center gap-2 text-xs text-amber-300 font-bold mb-1">
+            <span id="modal-recipe-difficulty"></span>
+            <span>·</span>
+            <span id="modal-recipe-servings"></span>
+          </div>
+          <h3 id="modal-recipe-title" class="text-xl sm:text-2xl font-black tracking-tight leading-snug"></h3>
+          <p id="modal-recipe-desc" class="text-xs sm:text-sm text-slate-200 mt-1 line-clamp-1"></p>
+        </div>
+      </div>
+
+      <!-- Modal Body (Scrollable Recipe Content) -->
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-6 flex-1 text-slate-800">
+
+        <!-- 1. 필요한 재료 & 양념 계량표 -->
+        <div>
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+            <h4 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-black">1</span>
+              <span>필요한 재료 & 양념 계량표</span>
+            </h4>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              마트/마켓 간편 준비
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="modal-recipe-ingredients">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- 2. 단계별 상세 조리 순서 (Cooking Steps) -->
+        <div>
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+            <h4 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-black">2</span>
+              <span>단계별 상세 조리 순서</span>
+            </h4>
+            <span class="text-xs text-slate-500 font-medium">초보자도 100% 성공 보장</span>
+          </div>
+
+          <div class="space-y-3" id="modal-recipe-steps">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Chef Tip Box -->
+          <div class="mt-3.5 p-3.5 rounded-2xl bg-amber-50 border border-amber-200 flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <div class="text-xs">
+              <strong class="text-amber-900 font-extrabold block mb-0.5">셰프의 실패 없는 한 끗 꿀팁!</strong>
+              <p id="modal-recipe-tip" class="text-amber-800 leading-relaxed font-medium"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 이 요리로 창출되는 환경 & 기아 구호 기여도 -->
+        <div>
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+            <h4 class="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+              <span>🌱 이 한 끼 요리로 절약되는 자원 & 기아 구호</span>
+            </h4>
+            <span class="text-[11px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">
+              Zero Hunger 연계
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center" id="modal-recipe-impact">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Action Buttons -->
+      <div class="p-4 sm:p-5 border-t border-slate-200 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+          <span class="text-xs text-slate-600 font-medium">
+            주재료: <strong id="modal-recipe-main-prod" class="text-slate-900 font-bold"></strong>
+          </span>
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <button id="modal-btn-add-cart" class="flex-1 sm:flex-initial px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <span>재료 장바구니 담기</span>
+          </button>
+          <button id="modal-btn-go-market" class="flex-1 sm:flex-initial px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <span>마켓에서 재료 보기 &rarr;</span>
+          </button>
+          <button onclick="toggleRecipeModal(false)" class="px-3.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold text-xs rounded-xl transition">
+            닫기
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900/95 backdrop-blur-md text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-sm font-semibold transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+    <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
+    <span id="toast-message">알림 메시지</span>
+  </div>
+
+  <!-- Custom JS Separation -->
+  <script src="js/app.js"></script>
+</body>
+</html>

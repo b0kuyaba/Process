@@ -2,26 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd3518a2-d538-4c7e-b7c5-612515fa5d1c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../B0kuyaba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/material_theme_project_new.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../B0kuyaba/img/loginSNS.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../B0kuyaba/img/loginlog.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../animation/css/ani_css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../animation/html/ani_html.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../process/css/shopify_clone.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../process/html/fre_shopify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../process/html/login_shopify.clone.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../process/html/shopify_clone.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/login_js/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/login_js/html/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../process/login_js/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/WebstormProjects.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../B0kuyaba" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../B0kuyaba/css/Library.css" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/css/Library.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../B0kuyaba/html/B0kuyaba.html" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/html/B0kuyaba.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../B0kuyaba/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/html/library.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../B0kuyaba/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../B0kuyaba/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/css/shopify_clone.css" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/css/shopify_clone.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/html/fre_shopify.html" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/html/fre_shopify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/html/login_shopify.clone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/html/login_shopify.clone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/html/shopify_clone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/html/shopify_clone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/img/glyph-color.png" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/img/glyph-color.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/img/logo-color-dark-bg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/img/logo-color-dark-bg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../process/vd/shopify-home-video.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/../process/shopify_clone/vd/shopify-home-video.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +138,9 @@
       <workItem from="1776220714679" duration="21000" />
       <workItem from="1776237189302" duration="12000" />
       <workItem from="1776582831088" duration="6000" />
+      <workItem from="1778044621828" duration="5000" />
+      <workItem from="1778459935521" duration="8000" />
+      <workItem from="1778459953387" duration="11000" />
     </task>
     <servers />
   </component>
